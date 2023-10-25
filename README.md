@@ -1,0 +1,1 @@
+# dict-manager-rs
