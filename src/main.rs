@@ -28,10 +28,10 @@ fn main() {
 	println!("{}", err_msg(true, ".dm file is needed to be readen. Add (or create) a .dm file with the -d flag").unwrap());
 	exit(0)
     }
-    // Add ./dicts/ to arguments as default folder (for now)
+	// Add ./dicts/ to arguments as default folder (for now)
     let mut dm = "./dicts/".to_string();
     dm.push_str(&args.database);
-    
+	
     println!("{:#?}", database(&dm).unwrap());
 }
 
