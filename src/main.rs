@@ -16,9 +16,11 @@ fn err_msg(err_msg: &str) -> String {
 }
 
 fn main() -> Result<(), String> {
-    clearscreen::clear().expect(&format!("{} Failed to clear the screen.", "[CLDM]:".bold()));
     // Parse arguments
     let args = Args::parse();
+
+    // Clear the screen
+    clearscreen::clear().expect(&format!("{} Failed to clear the screen.", "[CLDM]:".bold()));
 
     // Check if argument is alright
     if !args.database.contains(".dm") {
