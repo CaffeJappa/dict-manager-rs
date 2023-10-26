@@ -94,7 +94,7 @@ fn check_path(path: &str) -> Result<(), String> {
 
 fn add_entries(path: &str) -> Result<(), String> {
     loop {
-	print!("{} Do you want to create new entries in your dictionary? [Y/n] ", "[CLDM]:".bold());
+	print!("{} Do you want to create new entries in your dictionary? [Y/n/x] ", "[CLDM]:".bold());
 	let answer: String = read!();
 	if answer.to_lowercase().contains('y') {
 	    print!("{} Type in your new entry. When you're done, type Control-D or leave it blank and press Enter to exit.\n\n", "[CLDM]:".bold());
@@ -121,6 +121,8 @@ fn add_entries(path: &str) -> Result<(), String> {
 		Err(e) => return Err(format!("{}", err_msg(&e.to_string()))),
 		Ok(()) => ()
 	    }
+	} else if answer.to_lowercase().contains('x') {
+	    exit(1)
 	} else {
 	    continue
 	}
