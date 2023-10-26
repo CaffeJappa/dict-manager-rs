@@ -1,4 +1,4 @@
 /target
 /dicts
 /.dicts
-/.gitignore
+.gitignore
